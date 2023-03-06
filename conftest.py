@@ -39,3 +39,11 @@ def add_standard_imports(doctest_namespace, tmpdir):
 
     # always switch to the temporary directory, so files get written there
     tmpdir.chdir()
+
+
+try:
+    import dask
+
+    dask.config.set({"dataframe.convert_string": True})
+except Exception:
+    pass
